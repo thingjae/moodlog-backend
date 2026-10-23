@@ -40,7 +40,7 @@ export class MoodsController {
 
   @Delete(':id')
   @HttpCode(204)
-  remove(@Param('id', ParseIntPipe) id: number) {
-    this.moods.remove(id);
+  async remove(@Param('id', ParseIntPipe) id: number) {
+    await this.moods.remove(id);
   }
 }
